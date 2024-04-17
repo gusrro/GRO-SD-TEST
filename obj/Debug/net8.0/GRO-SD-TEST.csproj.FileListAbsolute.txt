@@ -1,0 +1,14 @@
+/Users/gramos/GB-GRO/GRO-SD-TEST/bin/Debug/net8.0/GRO-SD-TEST
+/Users/gramos/GB-GRO/GRO-SD-TEST/bin/Debug/net8.0/GRO-SD-TEST.deps.json
+/Users/gramos/GB-GRO/GRO-SD-TEST/bin/Debug/net8.0/GRO-SD-TEST.runtimeconfig.json
+/Users/gramos/GB-GRO/GRO-SD-TEST/bin/Debug/net8.0/GRO-SD-TEST.dll
+/Users/gramos/GB-GRO/GRO-SD-TEST/bin/Debug/net8.0/GRO-SD-TEST.pdb
+/Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/GRO-SD-TEST.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/GRO-SD-TEST.AssemblyInfoInputs.cache
+/Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/GRO-SD-TEST.AssemblyInfo.cs
+/Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/GRO-SD-TEST.csproj.CoreCompileInputs.cache
+/Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/GRO-SD-TEST.dll
+/Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/refint/GRO-SD-TEST.dll
+/Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/GRO-SD-TEST.pdb
+/Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/GRO-SD-TEST.genruntimeconfig.cache
+/Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/ref/GRO-SD-TEST.dll
