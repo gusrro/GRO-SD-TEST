@@ -12,3 +12,4 @@
 /Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/GRO-SD-TEST.pdb
 /Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/GRO-SD-TEST.genruntimeconfig.cache
 /Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/ref/GRO-SD-TEST.dll
+/Users/gramos/GB-GRO/GRO-SD-TEST/obj/Debug/net8.0/GRO-SD-TEST.sourcelink.json

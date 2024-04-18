@@ -1,32 +1,38 @@
-using System.Text;
-
 namespace GRO_SD_TEST;
 
-class Team(String Name)
-{
-    public required string Name { get; set; } = Name;
-    private int currentPoints = 0;
+using System.Text;
 
-    public void AddPoints( int points ){
-        this.currentPoints += points;
+// Class which represents a Team entity
+// Parameter Name - It's used for setting Name Property
+class Team(string Name)
+{
+    // Property Name - Represents name given to Team
+    public string Name { get; set; } = Name;
+    // Property CurrentPoints - Represents the point the Team has won with completed games
+    public int CurrentPoints { get; set; } = 0;
+
+    // Public method AddPoints - Used for adding points to the current total
+    // Param Points - Added points per call
+    public void AddPoints(int points)
+    {
+        this.CurrentPoints += points;
     }
 
-    
-    override public String ToString()
+    // ToString method override - Just for printing our own label representing Team
+    override public string ToString()
     {
-        String pointsPosfix;
+        string pointsPosfix;
         StringBuilder toStringValue;
-        
+
         pointsPosfix = "pts";
         toStringValue = new StringBuilder();
-        
-        if ( 1 == this.currentPoints)
+
+        // Evaluating if prefix must be shorter when value == 1
+        if (1 == this.CurrentPoints)
         {
             pointsPosfix = "pt";
         }
-
-        toStringValue.Append($"{this.Name}, {this.currentPoints} {pointsPosfix}");
-
+        toStringValue.Append($"{this.Name}, {this.CurrentPoints} {pointsPosfix}");
         return toStringValue.ToString();
     }
 
