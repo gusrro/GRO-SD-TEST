@@ -75,7 +75,7 @@ class Program
                                 logger.Append($"ERROR{Environment.NewLine}");
                             }
                             else
-                            {
+                            {  
                                 logger.Append($"OK{Environment.NewLine}");
                             }
                         }
