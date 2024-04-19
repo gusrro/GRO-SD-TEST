@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GRO-SD-TEST")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c986a1ff45ac42c1d1d3517cafdae602bf720cc2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f6b3f7ea1f02acbef6d0fdbb44ac845050c4c0f")]
 [assembly: System.Reflection.AssemblyProductAttribute("GRO-SD-TEST")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GRO-SD-TEST")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

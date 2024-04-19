@@ -54,7 +54,7 @@ class Program
                 {
                     source = $"File {fileName}";
                     Console.WriteLine($"Unable to read and process Score Lines by source '{source}', File was not found!!, try again...");
-                }
+                }  
 
                 // If scores are available and are inserted in the allScores list then process begins
                 if (areScoresAvailable && null != allScores)
