@@ -6,7 +6,7 @@ Next folders were included:
 1. samples - Contains all txt files used for testing
 2. src - Contains all sources files, main namespace was named Gro.SDTest.ScoreProcessor
 
-Source files are all in the same namespace using a DDD orientation
+Source files are all in the same namespace using feature orientation
 1. Constants.cs --> Constants used in code
 2. TeamEntity.cs --> Entity object which represents a Team
 3. ScoreService.cs --> Service class which implements process control and logic 
