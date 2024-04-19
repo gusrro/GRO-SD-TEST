@@ -1,0 +1,8 @@
+<Project>
+
+  <PropertyGroup>
+        <BaseIntermediateOutputPath>./_Obj\</BaseIntermediateOutputPath>
+        <BaseOutputPath>./_Bin\</BaseOutputPath>
+  </PropertyGroup>
+
+</Project>

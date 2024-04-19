@@ -1,4 +1,4 @@
-namespace GRO_SD_TEST;
+namespace Gro.SDTest.ScoreProcessor;
 
 // Class which represents Constants for the solution
 // Constant values could be changed in this class 

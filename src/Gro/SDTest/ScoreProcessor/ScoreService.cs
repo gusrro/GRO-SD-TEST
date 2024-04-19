@@ -1,19 +1,57 @@
-namespace GRO_SD_TEST;
+namespace Gro.SDTest.ScoreProcessor;
 
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 
 // Class which represents the engine which processes all score lines
-class ScoreProcessor()
+class ScoreService()
 {
     //Initializing our dictionary for managing Teams and their scores
-    private readonly Dictionary<string, Team> allTeams = [];
+    private readonly Dictionary<string, TeamEntity> allTeams = [];
 
+
+    public string ProcessScoreLines( List<String> allScores )
+    {
+        int lineCounter;
+        string errorMessage; // Variable used for setting error messages when a line is processed
+        StringBuilder logger; // Logger (as string) for all OK events
+        StringBuilder loggerError; // Logger (as string) for all ERROR events
+
+        lineCounter = 0;
+        logger = new StringBuilder();
+        loggerError = new StringBuilder();
+
+        logger.Append($"{Environment.NewLine}Process begin with {allScores.Count} score lines... {Environment.NewLine}");
+
+        foreach (string line in allScores)
+        {
+            lineCounter++;
+            logger.Append($"Processing ({lineCounter})... {line}... ");
+            // Each line is processed, if an error message returns then the line is ignored and process continue
+            errorMessage = this.AddScoreLine(line);
+
+            if (!string.Empty.Equals(errorMessage))
+            {
+                loggerError.Append($"System could not proccess line #{lineCounter}: {line} {Environment.NewLine} Error Message: {errorMessage}");
+                logger.Append($"ERROR{Environment.NewLine}");
+            }
+            else
+            {
+                logger.Append($"OK{Environment.NewLine}");
+            }
+        }
+
+        // When all score lines has been processed, results are returned with the GetScoreResults() method from ScoreProccesor
+        logger.Append($"{Environment.NewLine}Final results: {this.GetScoreResults()}");
+        logger.Append($"{Environment.NewLine}Process end... Error Log{Environment.NewLine}{loggerError.ToString()}");
+
+        return logger.ToString();
+    }
 
     // Public method AddScoreLine - Method used to process an score line and adding points to Teams
-    // Param scoreLine - An string representing the format TEAM 1 score, TEAM 2 score
-    public string AddScoreLine(string scoreLine ){
+    // Param scoreLine - An string representing the format Team 1 score, Team 2 score
+    private string AddScoreLine(string scoreLine ){
         bool isIntegerValid;
         int [] currentScore;
         int counter;
@@ -78,8 +116,8 @@ class ScoreProcessor()
     }
 
     // Public method GetScoreResults - Method used to get final results from the processor
-    public string GetScoreResults(){
-        List<Team> sortedList;
+    private string GetScoreResults(){
+        List<TeamEntity> sortedList;
         StringBuilder stringBuilder;
 
         stringBuilder = new StringBuilder();
@@ -94,22 +132,22 @@ class ScoreProcessor()
 
     // Public method GetSortedFinalResults - Method used to sort results in the final results
     // Only reason to create this method separately was to abstract the possibility to implement another sorting options
-    private List<Team> GetSortedFinalResults()
+    private List<TeamEntity> GetSortedFinalResults()
     {
-        List<Team> sortedList;
-        sortedList = new List<Team> (this.allTeams.Values);       
+        List<TeamEntity> sortedList;
+        sortedList = new List<TeamEntity> (this.allTeams.Values);       
         sortedList = [.. sortedList.OrderBy(p=>p.Name).OrderByDescending(o=>o.CurrentPoints)];
         return sortedList;
     }
 
     // Public method UpdateTeamPoints - Method used to finally evaluate the scores and assign points
-    // Param currentName - An string array with both Teams names
-    // Param currentScore - An int array with both Teams scores
+    // Param currentName - An string array with both Team names
+    // Param currentScore - An int array with both Team scores
     private string UpdateTeamPoints(string[] currentName, int [] currentScore )
     {
         string errorMessage;
-        Team team1;
-        Team team2;
+        TeamEntity team1;
+        TeamEntity team2;
         TextInfo textInfo;
 
         errorMessage = string.Empty;       
@@ -121,7 +159,7 @@ class ScoreProcessor()
         // Validation to avoid the same Team Name for both Teams in the score line
         if( currentName[0].Equals(currentName[1]) )
         {
-            errorMessage = $"Points won't be awarded when using same team Name '{currentName[0]}'";
+            errorMessage = $"Points won't be awarded when using same Team Name '{currentName[0]}'";
         }
         else
         {
@@ -153,17 +191,17 @@ class ScoreProcessor()
 
     // Public method getTeamFromDictionary - Method used to get Team object from the main dictionary
     // Param teamKey - A string representing the Team Key Name
-    private Team getTeamFromDictionary(string teamKey)
+    private TeamEntity getTeamFromDictionary(string teamKey)
     {
-        Team currentTeam;
+        TeamEntity currentTeam;
 
-        if ( allTeams.TryGetValue(teamKey, out Team? value))
+        if ( allTeams.TryGetValue(teamKey, out TeamEntity? value))
         {
             currentTeam = value;
         }
         else
         {
-            currentTeam = new Team( teamKey );
+            currentTeam = new TeamEntity( teamKey );
             allTeams.Add( teamKey, currentTeam);
         }
         return currentTeam;

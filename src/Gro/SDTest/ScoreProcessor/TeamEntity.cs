@@ -1,10 +1,10 @@
-namespace GRO_SD_TEST;
+namespace Gro.SDTest.ScoreProcessor;
 
 using System.Text;
 
 // Class which represents a Team entity
 // Parameter Name - It's used for setting Name Property
-class Team(string Name)
+class TeamEntity(string Name)
 {
     // Property Name - Represents name given to Team
     public string Name { get; set; } = Name;
