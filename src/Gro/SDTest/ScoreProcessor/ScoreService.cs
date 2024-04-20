@@ -44,7 +44,7 @@ class ScoreService()
 
         // When all score lines has been processed, results are returned with the GetScoreResults() method from ScoreProccesor
         logger.Append($"{Environment.NewLine}Final results: {this.GetScoreResults()}");
-        logger.Append($"{Environment.NewLine}Process end... Error Log{Environment.NewLine}{loggerError.ToString()}");
+        logger.Append($"{Environment.NewLine}{Environment.NewLine}Process end... Error Log{Environment.NewLine}{loggerError.ToString()}");
 
         return logger.ToString();
     }
